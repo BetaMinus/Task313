@@ -25,20 +25,20 @@ public class Main {
             Role roleAdmin = new Role("ROLE_Admin");
             Role roleUser = new Role("ROLE_User");
 
-            User admin1 = new User("admin", "admin", 111, "admin@mail", passwordEncoder.encode("admin"), Arrays.asList(roleAdmin, roleUser));
-            User admin2 = new User("admin2", "admin2", 222, "admin2@mail", passwordEncoder.encode("admin"), Collections.singletonList(roleAdmin));
-            User user1 = new User("user1", "user1", 11, "user1@mail", passwordEncoder.encode("admin"), Collections.singletonList(roleUser));
-            User user2 = new User("user2", "user2", 22, "user2@mail", passwordEncoder.encode("user2"), Collections.singletonList(roleUser));
-            User user3 = new User("user3", "user3", 33, "user3@mail", passwordEncoder.encode("user3"), Collections.singletonList(roleUser));
+            User admin1 = new User("admin1", "admin1", 111, "admin1@mail", "admin1", Arrays.asList(roleAdmin, roleUser));
+            User admin2 = new User("admin2", "admin2", 222, "admin2@mail", "admin2", Collections.singletonList(roleAdmin));
+            User user1 = new User("user1", "user1", 11, "user1@mail", "user1", Collections.singletonList(roleUser));
+            User user2 = new User("user2", "user2", 22, "user2@mail", "user2", Collections.singletonList(roleUser));
+            User user3 = new User("user3", "user3", 33, "user3@mail", "user3", Collections.singletonList(roleUser));
 
-//            roleService.create(roleAdmin);
-//            roleService.create(roleUser);
-//
-//            userService.create(admin1);
-//            userService.create(admin2);
-//            userService.create(user1);
-//            userService.create(user2);
-//            userService.create(user3);
+            roleService.create(roleAdmin);
+            roleService.create(roleUser);
+
+            userService.create(admin1);
+            userService.create(admin2);
+            userService.create(user1);
+            userService.create(user2);
+            userService.create(user3);
         };
     }
 }
